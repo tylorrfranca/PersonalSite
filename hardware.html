@@ -26,7 +26,7 @@
 				<header id="header" class="alt">
 					<a href="index.html" class="logo"><strong>Tylor</strong> <span>Franca Pires</span></a>
 					<nav>
-						<a href="images/Resume.pdf" target = "blank">My Resume</a>
+						<a href="images/Resume.pdf" target = "blank" alt = "tylor franca">My Resume</a>
 					</nav>
 				</header>
 
@@ -51,9 +51,9 @@
 									<h4>Hardware Design</h4>
 									<p>The hardware setup involved configuring the microcontroller ports, integrating the stepper motor with a power supply and voltage regulator, and setting up infrared sensors for object detection. Ensuring the motor ran off a stable 5V supply, rather than directly from the microcontroller, was essential for safety and reliability.</p>
 									<h5>Car Schematic</h5>
-									<img src="images/stepperCar2.png" alt="Description of image" width="full" height="full" class="bordered-image">
+									<img src="images/stepperCar2.png" alt="Description of image" width="full" height="full" class="bordered-image" alt = "tylor franca">
 									<h5>House Schematic</h5>
-									<img src="images/stepperHome2.png" alt="Description of image" width="full" height="full" class="bordered-image">
+									<img src="images/stepperHome2.png" alt="Description of image" width="full" height="full" class="bordered-image" alt = "tylor franca">
 									<h4>Conclusion</h4>
 									<p>Several challenges were encountered and overcome during this project. Initializing interrupts for switches and LEDs on predefined pins on port F required careful attention to input/output definitions. The interrupts were incorrectly triggered by LED changes instead of button presses, which was resolved by checking the GPIO_PORTF_RIS_R register in the port F handler. Another challenge was synchronizing the LED blinking rate with the stepper motor operation. This was addressed by using a count variable in the systick ISR to divide the motor's frequency, achieving the desired LED blinking rate. This project successfully demonstrated the integration of various microcontroller and sensor concepts to create a functional smart house and car system.</p>
 
