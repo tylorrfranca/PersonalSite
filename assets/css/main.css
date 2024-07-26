@@ -696,9 +696,26 @@ input, select, textarea {
 							padding-top: 0em;
 						}
 
-						.bordered-image {
-							border: 3px solid black; /* Adjust width, style, and color */
-						}
+				.bordered-image {
+					border: 3px solid black; /* Adjust width, style, and color */
+					width: 100%; /* Make the image responsive by default */
+    				height: auto;
+				}
+				@media (min-width: 768px) {
+					.responsive-image {
+						width: auto; /* Reset width for larger screens if necessary */
+						height: auto;
+					}
+				}
+
+				@media (max-width: 767px) {
+					.responsive-image {
+						max-width: 100%; /* Ensure the image fits within the container */
+						height: auto;
+					}
+				}
+
+
 
 				.row.gtr-25 {
 					margin-top: 0;
@@ -3534,6 +3551,7 @@ input, select, textarea {
 			-ms-transform: translateX(-0.5em);
 			transform: translateX(-0.5em);
 			opacity: 0;
+			overflow-x: hidden;
 		}
 
 		@media screen and (max-width: 1280px) {
