@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic - Forty by HTML5 UP</title>
+		<title>tylorfrancadev</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -18,26 +18,13 @@
 			<div id="wrapper">
 
 				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
-
-				<!-- Menu -->
-					<nav id="menu">
-						<ul class="links">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="landing.html">Landing</a></li>
-							<li><a href="generic.html">Generic</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-						<ul class="actions stacked">
-							<li><a href="#" class="button primary fit">Get Started</a></li>
-							<li><a href="#" class="button fit">Log In</a></li>
-						</ul>
+				<header id="header" class="alt">
+					<a href="index.html" class="logo"><strong>Tylor</strong> <span>Franca Pires</span></a>
+					<nav>
+						<a href="images/Resume.pdf" target = "blank">My Resume</a>
 					</nav>
+				</header>
+
 
 				<!-- Main -->
 					<div id="main" class="alt">
@@ -46,85 +33,71 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1>Generic</h1>
+										<h1>Hardware Projects</h1>
 									</header>
-									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h2>A Smart House with a Stepper Motor Car</h2>
+									<a href="https://docs.google.com/document/d/1J4H_t_GdEwgFQl6aFlcNArD1wbltSQ8ujHcXQrXLwf4/edit?usp=sharing" class="button" target="blank">Full Report</a>
+									
+									<a href="https://drive.google.com/file/d/1d-cMdVRQ0Sl9efi6i3eT-06Kth9WA355/view?usp=drive_link" class="button" target="blank">Video</a>
+									<h4>Introdction</h4>
+									<p>This was a group project that integrated a smart house and a smart car, both equipped with sensors to enable seamless interaction. The car operates in two modes: entering and leaving. In the entering mode, an infrared sensor detects objects ahead, ensuring the car doesn't collide with obstacles. The car then navigates towards the house. The house, equipped with its own infrared sensor, detects when the car is waiting for the garage to open. Upon detection, a stepper motor opens the garage door, allowing the car to enter. Conversely, in the leaving mode, the car exits the garage, turns, and leaves.</p>
+									<h4>Software Design</h4>
+									<p>Two TM4C microcontrollers were programmed to manage the car and the smart house. The car's program utilized an FSM to control movement and interrupts for the onboard switches and infrared sensor. When the sensor detected an object, the car stopped until the path was clear. The house's program mirrored the car’s control logic, with added LED indicators to signal the garage door's status. The house system activated upon a switch interrupt and used an infrared sensor to detect the car, triggering the garage door mechanism.</p>
+									<h4>Hardware Design</h4>
+									<p>The hardware setup involved configuring the microcontroller ports, integrating the stepper motor with a power supply and voltage regulator, and setting up infrared sensors for object detection. Ensuring the motor ran off a stable 5V supply, rather than directly from the microcontroller, was essential for safety and reliability.</p>
+									<h5>Car Schematic</h5>
+									<img src="images/stepperCar2.png" alt="Description of image" width="full" height="full" class="bordered-image">
+									<h5>House Schematic</h5>
+									<img src="images/stepperHome2.png" alt="Description of image" width="full" height="full" class="bordered-image">
+									<h4>Conclusion</h4>
+									<p>Several challenges were encountered and overcome during this project. Initializing interrupts for switches and LEDs on predefined pins on port F required careful attention to input/output definitions. The interrupts were incorrectly triggered by LED changes instead of button presses, which was resolved by checking the GPIO_PORTF_RIS_R register in the port F handler. Another challenge was synchronizing the LED blinking rate with the stepper motor operation. This was addressed by using a count variable in the systick ISR to divide the motor's frequency, achieving the desired LED blinking rate. This project successfully demonstrated the integration of various microcontroller and sensor concepts to create a functional smart house and car system.</p>
+
 								</div>
 							</section>
 
 					</div>
 
 				<!-- Contact -->
-					<section id="contact">
-						<div class="inner">
+				<section id="contact">
+					<div class="inner">
+						<section class="split">
 							<section>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Clear" /></li>
-									</ul>
-								</form>
+								<div class="contact-method">
+									<span class="icon solid alt fa-envelope"></span>
+									<h3>Email</h3>
+									<a href="#">tylorfranca101@gmail.com</a>
+								</div>
 							</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="#">information@untitled.tld</a>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-phone"></span>
-										<h3>Phone</h3>
-										<span>(000) 000-0000 x12387</span>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-home"></span>
-										<h3>Address</h3>
-										<span>1234 Somewhere Road #5432<br />
-										Nashville, TN 00000<br />
-										United States of America</span>
-									</div>
-								</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-phone"></span>
+									<h3>Phone</h3>
+									<span>+1 (831) 428-6052</span>
+								</div>
 							</section>
-						</div>
-					</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-home"></span>
+									<h3>Location</h3>
+									<span>Long Beach, California<br />
+								</div>
+							</section>
+						</section>
+					</div>
+				</section>
 
 				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
+				<footer id="footer">
+					<div class="inner">
+						<ul class="icons">
+							<li><a href="https://github.com/tylorrfranca" class="icon brands alt fa-github" target ="blank"><span class="label">GitHub</span> GitHub</a></li>
+							<li><a href="https://www.linkedin.com/in/tylorfrancapires-949254179/" class="icon brands alt fa-linkedin-in" target ="blank"><span class="label">LinkedIn</span> LinkedIn</a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; tylorfrancadev</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
 
 			</div>
 
